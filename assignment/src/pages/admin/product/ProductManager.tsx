@@ -14,7 +14,7 @@ const ProductManager = ({ products, onRemove }: ProductManagerProps) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-12 ms-sm-auto col-lg-10 px-md-4">
+        <div className="col-md-6 ms-sm-auto col-lg-12 px-md-4">
           <h2>Section title</h2>
 
           <button><a className='btn btn-primary' href="/admin/product/add">Add</a></button>
