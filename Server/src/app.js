@@ -1,34 +1,32 @@
-// const express = require("express");
+
 import express from 'express';
-import productRouter from './routes/product';
-import categoryRouter from './routes/category';
-import authRouter from './routes/auth'
-
-import mongoose from 'mongoose';
 import cors from 'cors';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
 
+import productsRouter from "../routes/product";
+import usersRouter from "../routes/user";
+import categoryRoute from '../routes/category';
+import authRoute from "../routes/auth";
 const app = express();
-
-
-// middleware
-app.use(express.json());
+//middleware
 app.use(cors());
+app.use(morgan('tiny'));
+app.use(express.json())
+
+//route
+app.use(productsRouter);
+app.use(usersRouter);
+app.use(categoryRoute);
+app.use(authRoute);
+//connec data
+mongoose.connect('mongodb://127.0.0.1:27017/we16308')
+    .then(() => console.log("Ket noi db thanh cong"))
+    .catch((error) => console.log(error));
 
 
-// Routing
-app.use("/api", productRouter);
-app.use("/api", categoryRouter);
-app.use("/api", authRouter);
-
-
-// kết nối với data
-mongoose.connect("mongodb://127.0.0.1:27017/Assignment")
-  .then(() => console.log("Connect db thanh cong"))
-  .catch((error) => console.log(error))
-
-
-const PORT = 8000;
+//connection
+const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`Server đang chạy cổng ${PORT}`);
-});
-
+    console.log("Server is running  port", PORT);
+})
