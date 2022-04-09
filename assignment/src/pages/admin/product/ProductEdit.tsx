@@ -83,7 +83,7 @@ const ProductEdit = (props: ProductEditProps) => {
             <textarea className="form-control" {...register('detail')} placeholder="Detail" aria-label="With textarea" defaultValue={""} />
           </div>
 
-          <button>Update</button>
+          <button className="btn btn-primary">Update</button>
         </form>
 
 

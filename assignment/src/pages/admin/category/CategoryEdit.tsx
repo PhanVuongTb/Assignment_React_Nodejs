@@ -34,14 +34,14 @@ const CategoryEdit = (props: CategoryEditProps) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <form className="col-md-9 ms-sm-auto col-lg-10 px-md-4 my-4" action="" onSubmit={handleSubmit(onSubmit)}>
-          <h1 className='py-4'>Update_Category</h1>
+        <form className="col-md-9 ms-sm-auto col-lg-12 px-md-4 my-4" action="" onSubmit={handleSubmit(onSubmit)}>
+          <h1 className='py-2'>Update Category</h1>
           <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">Name</span>
-            <input type="text" {...register('name', { required: true })} className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+            <input type="text" {...register('name', { required: true })} className="form-control col-lg-3" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
           </div>
 
-          <button>Update</button>
+          <button className="btn btn-primary">Update</button>
         </form>
 
 

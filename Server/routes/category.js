@@ -12,7 +12,7 @@ const check = (req, res, next) => {
 }
 
 router.post("/category", create);
-router.get("/categorie", list);
+router.get("/categorys", list);
 router.get("/category/:id", read);
 router.delete("/category/:id", remove);
 router.put("/category/:id", update)
