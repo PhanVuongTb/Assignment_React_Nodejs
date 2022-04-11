@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -36,7 +36,21 @@
     transform: rotate(360deg);
   }
 }
+a{
+  color: black;
+}
+li a{
+  text-decoration: none;
 
+}
+li{
+  list-style: none;
+}
 button {
   font-size: calc(10px + 2vmin);
+}
+footer a{
+  color:#fff;;
+  font-family: Nike TG,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }

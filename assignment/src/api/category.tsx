@@ -1,23 +1,20 @@
-import { categoryType } from "../pages/types/categoryType";
+
+import { CategoryType } from "../types/category";
 import instance from "./instance";
 
-export const listcategory = () => {
-    const url = "/categorys";
-    return instance.get(url)
-};
-export const read = (id: any) => {
-    const url = `/category/${id}`;
-    return instance.get(url)
-};
-export const removecatgory = (id: any) => {
-    const url = `/category/${id}`;
-    return instance.delete(url)
-};
-export const addcategory = (category: categoryType) => {
-    const url = "/category";
-    return instance.post(url, category)
-};
-export const updatecategory = (category: categoryType) => {
-    const url = `/category/${category._id}`;
-    return instance.put(url, category)
-};
+export const listCate = () => {
+    const url = `categorys`;
+    return instance.get(url); 
+}
+export const removeCate = (id: number) => {
+    const url = `categorys/${id}`;
+    return instance.delete(url); 
+}
+export const addCate = (category: CategoryType ) => {
+    const url = `categorys`;
+    return instance.post(url, category); 
+}
+export const updateCate = (category: CategoryType) => {
+    const url = `/categorys/${category._id}`;
+    return instance.put(url, category);
+}

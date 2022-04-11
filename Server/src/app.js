@@ -15,10 +15,10 @@ app.use(morgan('tiny'));
 app.use(express.json())
 
 //route
-app.use(productsRouter);
-app.use(usersRouter);
-app.use(categoryRoute);
-app.use(authRoute);
+app.use("/api", productsRouter);
+app.use("/api", usersRouter);
+app.use("/api", categoryRoute);
+app.use("/api", authRoute);
 //connec data
 mongoose.connect('mongodb://127.0.0.1:27017/we16308')
     .then(() => console.log("Ket noi db thanh cong"))
