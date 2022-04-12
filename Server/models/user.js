@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 import {createHmac} from "crypto"
+
 const userSchema = new mongoose.Schema({
     name:{
         type:String,
-        required:true,
-        trim: true
+        trim:true,
+        required:true
     },
-    
     email:{
         type:String,
         required:true
@@ -15,7 +15,8 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     }
-})
+},{timestamps:true})
+
 userSchema.methods = {
     authenticate(password){
         try {
@@ -41,4 +42,5 @@ userSchema.pre("save",function(next){
         console.log(error);
     }
 })
+
 export default mongoose.model('User',userSchema)

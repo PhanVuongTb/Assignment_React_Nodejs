@@ -64,11 +64,11 @@ const EditProduct = () => {
         <span>Price </span><hr />
         <input type="number" {...register('price', { required: true })} /><hr />
 
-        <span>Quantity </span><hr />
-        <input type="number" {...register('quantity', { required: true })} /><hr />
+        <span>Detail</span><hr />
+        <input type="text" {...register('detail', { required: true })} /><hr />
 
-        <span>Desc </span><hr />
-        <input type="text" {...register('desc', { required: true })} /><hr />
+        <span>Description </span><hr />
+        <input type="text" {...register('description', { required: true })} /><hr />
 
         <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
           Update

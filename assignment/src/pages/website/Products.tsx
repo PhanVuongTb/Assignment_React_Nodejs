@@ -66,7 +66,7 @@ const Products = () => {
                           <Link to={`/productdetail/${item._id}`} >
                             <div className="group relative">
                               <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src={item.image} alt="Front of men&#039;s Basic Tee in black." className="w-20 h-20  lg:w-full lg:h-full" />
+                                <img src={item.img} alt="Front of men&#039;s Basic Tee in black." className="w-20 h-20  lg:w-full lg:h-full" />
                               </div>
                               <div className="mt-4 flex justify-between">
 

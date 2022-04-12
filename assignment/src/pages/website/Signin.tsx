@@ -16,7 +16,7 @@ const Signin = () => {
       const { data: user } = await signin(data);
       localStorage.setItem('user', JSON.stringify(user));
       alert('Đăng Nhập thành công ')
-      navigate('/');
+      navigate('/admin');
     } catch (error) {
       console.log(error);
     }

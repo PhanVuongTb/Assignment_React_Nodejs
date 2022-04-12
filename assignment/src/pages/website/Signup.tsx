@@ -24,19 +24,6 @@ const Signup = () => {
 
   }
   return (
-    //   <form action="" onSubmit={handleSubmit(onSubmit)}>
-    //       <span>Name</span>
-    //     <input type="text" {...register('name', {required: true})} /><hr/>
-    //     <span>phonenumber</span>
-    //     <input type="number" {...register('phonenumber', {required: true})} /><hr/>
-    //     <span>address</span>
-    //     <input type="text" {...register('address', {required: true})} /><hr/>
-    //     <span>email</span>
-    //     <input type="text" {...register('email', {required: true})} /><hr/>
-    //     <span>password</span>
-    //     <input type="password" {...register('password', {required: true})} /><hr/>
-    //     <button>Đăng Ký</button>
-    // </form>
     <div className="mt-5 md:mt-0 md:col-span-2">
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign up</h2>
@@ -69,7 +56,6 @@ const Signup = () => {
                 <label className="block text-sm font-medium text-gray-700">Password</label>
                 <input type="password" {...register('password', { required: true })} placeholder="****" autoComplete="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
               </div>
-
             </div>
           </div>
           <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">

@@ -1,29 +1,43 @@
-// b1: include thư viện http
 import express from "express";
-import cors from "cors"
-import { checkAuth } from "./middlewares/checkAuth";
-import Home from "./routes/home";
-import Products from "./routes/products";
-import mongoose from "mongoose";
-import categoryRoute from "./routes/category";
+import homeRoute from "./routes/home"
+import productRoute from "./routes/product"
+import categoryRoute from './routes/category'
 import authRoute from './routes/auth'
+import { checkAuth } from "./middlewares/checkAuth";
+import mongoose from "mongoose";
 const app = express();
-app.use(cors());
-mongoose.connect('mongodb://127.0.0.1:27017/Assignment');
+
+mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 app.use(express.json())
-app.use(Home);
-app.use("/api", checkAuth, Products);
-app.use("/api", categoryRoute);
+app.use(homeRoute);
+app.use(checkAuth, productRoute);
+app.use("/api", checkAuth, productRoute);
+app.use("/api", categoryRoute)
 app.use("/api", authRoute)
 
 
-// const homeRoute = require('./routes/home');
-// app.use(homeRoute);
 
-// const products = require('./routes/product');
-// app.use(products);
+// const server = http.createServer((request, response)=>{
+//     console.log(request.url);
+//     if(request.url === '/'){
+//         response.setHeader("Content-Type" , "text/html");
+//         response.write(`
+//             <h1>Home Page</h1>
+//         `);
+//         response.end();
+//     }
+//     if(request.url === '/products'){
+//         console.log("Product Page");
 
-app.listen(5000, () => {
-    console.log("server is running")
-})
+//         response.setHeader("Content-Type" , "text/html");
+//         response.write(`
+//             <h1>Product Page</h1>
+//         `)
+//     }
+// });
+
+
+app.listen(8000, () => {
+    console.log("server is running on port 8000");
+});
