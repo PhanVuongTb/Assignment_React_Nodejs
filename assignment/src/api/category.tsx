@@ -6,7 +6,7 @@ export const listCate = () => {
     const url = `category`;
     return instance.get(url);
 }
-export const removeCate = (id: number) => {
+export const removeCate = (id: any) => {
     const url = `category/${id}`;
     return instance.delete(url);
 }

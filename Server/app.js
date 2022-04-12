@@ -5,39 +5,19 @@ import categoryRoute from './routes/category'
 import authRoute from './routes/auth'
 import { checkAuth } from "./middlewares/checkAuth";
 import mongoose from "mongoose";
+import cors from "cors"
 const app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+mongoose.connect('mongodb://127.0.0.1:27017/Assignment');
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 app.use(homeRoute);
 app.use(checkAuth, productRoute);
 app.use("/api", checkAuth, productRoute);
 app.use("/api", categoryRoute)
 app.use("/api", authRoute)
 
-
-
-// const server = http.createServer((request, response)=>{
-//     console.log(request.url);
-//     if(request.url === '/'){
-//         response.setHeader("Content-Type" , "text/html");
-//         response.write(`
-//             <h1>Home Page</h1>
-//         `);
-//         response.end();
-//     }
-//     if(request.url === '/products'){
-//         console.log("Product Page");
-
-//         response.setHeader("Content-Type" , "text/html");
-//         response.write(`
-//             <h1>Product Page</h1>
-//         `)
-//     }
-// });
-
-
-app.listen(8000, () => {
-    console.log("server is running on port 8000");
+app.listen(5000, () => {
+    console.log("server is running on port 5000");
 });
