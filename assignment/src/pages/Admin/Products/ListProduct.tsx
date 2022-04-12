@@ -28,13 +28,14 @@ const ListProduct = () => {
                             <th className="px-4 py-3">Name</th>
                             <th className="px-4 py-3">Img</th>
                             <th className="px-4 py-3">Price</th>
-                            <th className="px-4 py-3">Quantity</th>
+                            <th className="px-4 py-3">Detail</th>
                             <th className="px-4 py-3">Desc</th>
                             <th className="px-4 py-3">Action</th>
                         </tr>
                     </thead>
                     <tbody className="bg-white divide-y">
                         {products?.map((item: ProductType, index) => {
+                            console.log(products)
                             return (
                                 <tr key={index} className="">
                                     <td className="px-4 py-3 text-sm">
@@ -47,16 +48,16 @@ const ListProduct = () => {
                                         {item.name}
                                     </td>
                                     <td>
-                                        <img className="h-20 w-20 rounded-full" src={item.image} alt="" />
+                                        <img className="h-20 w-20 rounded-full" src={item.img} />
                                     </td>
                                     <td className="px-4 py-3 text-sm">
                                         {item.price}
                                     </td>
                                     <td className="px-4 py-3 text-sm">
-                                        {item.quantity}
+                                        {item.detail}
                                     </td>
                                     <td className="px-4 py-3 text-sm">
-                                        {item.desc}
+                                        {item.description}
                                     </td>
                                     <td>
                                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

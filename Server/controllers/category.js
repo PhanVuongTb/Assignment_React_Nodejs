@@ -1,53 +1,45 @@
-import Category from '../models/category';
-import Product from '../models/product';
 
-export const create = async (req, res) => {
-    try {
-        const category = await new Category(req.body).save()
-        res.json(category);
-    } catch (error) {
-        res.status(400).json({error})
-    }
-}
+import Category from '../models/category'
+import Product from '../models/products'
 
-export const read = async ( req, res) => {
-    const condition = {_id: req.params.id}
+export const createCategory = async (request,response)=>{
     try {
-        const category = await Category.findOne(condition).exec();
-        const products = await Product.find({category}).select("-category").exec();
-        res.json({
-            category,
-            products
-        })
+        const category = await Category(request.body).save()
+        response.json(category)
     } catch (error) {
-        
+        response.status(400).json({message:"Khong the tao moi"})
     }
 }
-export const list = async ( req, res) => {
+export const listCategory = async(request,response)=>{
     try {
-        const categories = await Category.find().exec();
-        res.json(categories)
+        const category = await Category.find().exec()
+        response.json(category)
     } catch (error) {
-        
+        response.status(400).json({message:"Khong the hien thi"})
     }
 }
-export const remove = async ( req, res) => {
-    const condition = { _id: req.params.id};
+export const listCategoryDetail = async (request,response)=>{
     try {
-        const categories = await Category.findOneAndDelete(condition).exec();
-        res.json(categories)
+        const category = await Category.findOne({_id:request.params.id}).exec()
+        const product = await Product.find({category}).exec()
+        response.json({category,product})
     } catch (error) {
-        
+        response.status(400).json({message:"Khong the hien thi"})
     }
 }
-export const update = async ( req, res) => {
-    const condition = { _id: req.params.id};
-    const document = req.body;
-    const options = { new: true}
+export const deleteCategory = async (request,response)=>{
     try {
-        const category = await Category.findOneAndUpdate(condition, document, options).exec();
-        res.json(category)
+        const category = await Category.findOneAndDelete({_id:request.params.id}).exec()
+        response.json(category);
     } catch (error) {
-        
+        response.status(400).json({message:"khong xoa duoc"})
+    }
+}
+export const updateCategory =  async(request,response)=>{
+    try {
+        const category = await Category.findOneAndUpdate({_id:request.params.id}, request.body)
+        response.json(category);
+    } catch (error) {
+        response.status(400).json({message:"khong sua duoc"})
     }
 }

@@ -1,19 +1,11 @@
-import { Router } from 'express';
-import { create, list, read, remove, update } from '../controllers/category';
-const router = Router();
+import express from "express";
+import { createCategory, deleteCategory, listCategory, listCategoryDetail, updateCategory } from "../controllers/category";
+const router = express.Router();
 
-const check = (req, res, next) => {
-    const status = true;
-    if (status) {
-        next();
-    } else {
-        console.log("Ban khong co quyen truy cap");
-    }
-}
+router.post("/category",createCategory)
+router.get("/category",listCategory)
+router.get("/category/:id",listCategoryDetail)
+router.delete("/category/:id", deleteCategory)
+router.put("/category/:id",updateCategory)
 
-router.post("/category", create);
-router.get("/categorys", list);
-router.get("/category/:id", read);
-router.delete("/category/:id", remove);
-router.put("/category/:id", update)
-export default router;
+export default router

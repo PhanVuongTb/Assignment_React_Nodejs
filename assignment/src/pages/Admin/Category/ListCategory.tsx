@@ -19,7 +19,7 @@ const ListCategory = () => {
         <div className="w-full overflow-hidden rounded-lg shadow-xs">
             <div className='flex justify-between mb-[20px]'>
                 <h3 className='text-[30px]'>Categorys</h3>
-                <Link to="/admin/category" className=' inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 no-underline'>Add Category</Link>
+                <Link to="/admin/category/add" className=' inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 no-underline'>Add Category</Link>
             </div>
             <div className="w-full overflow-x-auto">
                 <table className="w-full whitespace-no-wrap">

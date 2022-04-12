@@ -3,18 +3,18 @@ import { CategoryType } from "../types/category";
 import instance from "./instance";
 
 export const listCate = () => {
-    const url = `categorys`;
-    return instance.get(url); 
+    const url = `category`;
+    return instance.get(url);
 }
 export const removeCate = (id: number) => {
-    const url = `categorys/${id}`;
-    return instance.delete(url); 
+    const url = `category/${id}`;
+    return instance.delete(url);
 }
-export const addCate = (category: CategoryType ) => {
-    const url = `categorys`;
-    return instance.post(url, category); 
+export const addCate = (category: CategoryType) => {
+    const url = `category`;
+    return instance.post(url, category);
 }
 export const updateCate = (category: CategoryType) => {
-    const url = `/categorys/${category._id}`;
+    const url = `/category/${category._id}`;
     return instance.put(url, category);
 }
