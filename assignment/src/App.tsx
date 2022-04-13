@@ -21,6 +21,7 @@ import Cart from './Pages/Website/Cart';
 import Bill from './Pages/Website/Bill';
 import Ntfcation from './Pages/Website/Ntfcation';
 import Contact from './Pages/Website/Contact';
+import PrivateRouter from './Components/PrivateRouter';
 
 
 function App() {
@@ -40,9 +41,9 @@ function App() {
           <Route path='productdetail/:id/cart/bill' element={<Bill />} />
           <Route path='productdetail/cart/bill/notification' element={<Ntfcation />} />
         </Route>
-        <Route path='admin' element={<AdminLayount />}>
+        <Route path='admin' element={<PrivateRouter><AdminLayount /></PrivateRouter>}>
           <Route index element={<Dashboard />} />
-          
+
           <Route path='products' >
             <Route index element={<ListProduct />} />
             <Route path='add' element={<AddProduct />} />

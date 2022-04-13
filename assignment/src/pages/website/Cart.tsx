@@ -68,7 +68,7 @@ const Cart = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{item.price}USA</div>
+                        <div className="text-sm text-gray-900">{item.price}.000 VND</div>
 
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
@@ -82,7 +82,7 @@ const Cart = () => {
                         <button data-id="${item.id}" className="btn btn-decrease">-</button>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {item.quantity * item.price}USA
+                        {item.quantity * item.price}.000 VND
                       </td>
                       <td>
 
