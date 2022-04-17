@@ -8,7 +8,7 @@ const SliderAdmin = (props: Props) => {
         <div>
             <aside className="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0">
                 <div className="py-4 text-gray-500 text-gray-400 ">
-                    <a className="ml-6 text-lg font-bold text-gray-800  " href="#">
+                    <a className="ml-6 text-lg font-bold text-gray-800  " href="/">
                         Quay lại Websites
                     </a>
                     <ul className="mt-6">

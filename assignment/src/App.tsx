@@ -22,6 +22,7 @@ import Bill from './Pages/Website/Bill';
 import Ntfcation from './Pages/Website/Ntfcation';
 import Contact from './Pages/Website/Contact';
 import PrivateRouter from './Components/PrivateRouter';
+import Search from './Pages/Website/Search';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path='signin' element={<Signin />} />
           <Route path='signup' element={<Signup />} />
           <Route path='contact' element={<Contact />} />
+          <Route path="search/:key" element={<Search />} />
           <Route path='productdetail/:id' element={<ProductDetail />} />
           <Route path='productdetail/:id/cart' element={<Cart />} />
           <Route path='productdetail/:id/cart/bill' element={<Bill />} />

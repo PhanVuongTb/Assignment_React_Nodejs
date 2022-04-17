@@ -28,7 +28,7 @@ const Nav = (props: Props) => {
           </a>
           <div className="flex items-center md:order-2">
             <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-              {localStorage.getItem('user') ? <form action="" onSubmit={handleSubmit(onSubmit)} ><button className='btn_logout'>Đăng xuất</button></form> : <div className="logo" style={{ display: "flex" }}>
+              {localStorage.getItem('user') ? <form action="" onSubmit={handleSubmit(onSubmit)} ><button className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white">Đăng xuất</button></form> : <div className="logo" style={{ display: "flex" }}>
                 <li>
                   <a href="/signin" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Sign In</a>
                 </li>

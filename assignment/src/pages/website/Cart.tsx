@@ -19,6 +19,7 @@ const Cart = () => {
   const decrease = (_id: any) => {
     dispatch(decreaseQuantity(_id))
   }
+  
   return (
     <div>  <div className="flex flex-col m-10">
       <h4>Cart</h4>
@@ -32,7 +33,7 @@ const Cart = () => {
                     STT
                   </th>
                   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Ảnh
+                    Tên
                   </th>
                   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Giá
@@ -48,21 +49,18 @@ const Cart = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+              <tbody className="bg-white divide-y ">
                 {itemsCart?.map((item: ProductType, index) => {
                   return (
-                    <tr key={index} className="text-gray-700 dark:text-gray-400">
+                    <tr key={index} className="">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">{index + 1}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="flex-shrink-0 h-10 w-10">
-                            <img className="h-10 w-10 rounded-full" src={item.img} alt="" />
-                          </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">
-                              ${item.name}
+                              {item.name}
                             </div>
                           </div>
                         </div>

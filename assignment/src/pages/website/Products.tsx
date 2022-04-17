@@ -1,21 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { listsProduct, namesProduct, filterProName } from '../../features/product/productSlice'
+import { listsProduct, filterProName } from '../../features/product/productSlice'
 import { ProductType } from '../../types/products'
 
 const Products = () => {
-  const { id } = useParams(null);
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.products.value)
-  const timeClearRef = useRef(null);
-  useEffect(() => {
-    if (!id) {
-      dispatch(listsProduct())
-    } else {
-      dispatch(filterProName(id))
-    }
-  }, [id]);
   useEffect(() => {
     dispatch(listsProduct());
   }, [])
@@ -42,26 +33,25 @@ const Products = () => {
                       {products?.map((item: ProductType, index) => {
                         return <div key={index}>
                           <Link to={`/productdetail/${item._id}`} >
-                            <div className="group relative">
-                              <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src={item.img} alt="Front of men&#039;s Basic Tee in black." className="w-20 h-20  lg:w-full lg:h-full" />
-                              </div>
-                              <div className="mt-4 flex justify-between">
-
-                                <div>
-                                  <h3 className="text-sm text-gray-700 no-underline">
-                                    <span className='' >{item.name}</span>
-                                  </h3>
-                                  <p className="mt-1 text-sm text-gray-500">{item.price}.000 VND</p>
+                            <div className="shadow-lg rounded-lg">
+                              <a href={`/productdetail/${item._id}`}>
+                                <img src={item.img} className="rounded-tl-lg rounded-tr-lg" />
+                              </a>
+                              <div className="p-5">
+                                <h3><a href="/products/${product.id}">{item.name}</a></h3>
+                                <div className="flex flex-col xl:flex-row justify-between">
+                                  <a className="bg-gradient-to-r from-red-600 to-pink-500 rounded-full py-2 px-4 my-2 text-sm text-white hover:bg-pink-600 hover:from-pink-600 hover:to-pink-600 flex flex-row justify-center" href={`/productdetail/${item._id}`}>
+                                    Xem sản phẩm
+                                  </a>
+                                  <a href="/products/${product.id}">
+                                    <p className="text-sm text-sky-700">{item.price}.000 VND</p>
+                                  </a>
                                 </div>
-                                <p className="text-sm font-medium text-gray-900"></p>
                               </div>
-
                             </div>
                           </Link>
                         </div>
                       })}
-
                     </div>
 
                   </div>

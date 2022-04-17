@@ -33,3 +33,7 @@ export const likeNamePro = (keyword: any) => {
     const url = `/products?name=${keyword}`;
     return instance.get(url)
 };
+export const searchProduct = (key: string) => {
+    const url = `/sproduct/${key}`;
+    return instance.get(url);
+}
